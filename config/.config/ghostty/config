@@ -22,7 +22,7 @@ theme = Custom-iTerm
 
 background-opacity = 0.75
 background-blur-radius = 20
-background-image = $HOME/.config/ghostty/backgrounds/background.png
+background-image = backgrounds/background.png
 
 selection-background = #454d96
 foreground = #b8b8b8
