@@ -1,0 +1,33 @@
+# Zsh 配置加载顺序清单
+# 注释以 # 开头，空行自动忽略
+# 文件按从上到下的顺序加载
+
+env.zsh           # 环境变量最先设置
+path.zsh          # PATH 配置
+brew.zsh          # homebrew 配置
+plugins.zsh       # omz 插件配置
+proxy.zsh         # 代理配置
+hash.zsh          # hash 文件夹配置
+
+c.zsh
+rust.zsh
+python.zsh
+pyenv-lazy.zsh    # pyenv 懒加载
+conda.zsh
+node.zsh
+java.zsh
+ruby.zsh
+flutter.zsh
+android.zsh
+nginx.zsh
+docker.zsh
+
+vim.zsh
+emacs.zsh
+#hugo.zsh
+tmux.zsh
+
+chore.zsh
+alias.zsh         # 别名（可以使用前面的配置）
+#theme.zsh         # 主题配置（最后加载）
+fzf-tab.zsh

@@ -1,0 +1,23 @@
+[pager]
+	branch = false
+[core]
+	excludesfile = /Users/clloz/.gitignore_global
+	ignorecase = false
+	autocrlf = input
+[user]
+	name = Clloz
+	email = clloz@outlook.com
+	signingkey = A304E9E75192339D
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true

@@ -1,0 +1,57 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+# format = """
+# $directory\
+# $git_branch\
+# $git_status\
+# $cmd_duration\
+# $line_break\
+# $character
+# """
+
+[directory]
+truncation_length = 5
+truncate_to_repo = true
+# fish_style_pwd_dir_length = 1
+style = "blue bold"
+
+[character]
+# success_symbol = "[❯](green bold)"
+# error_symbol = "[❯](red bold)"
+# vimcmd_symbol = "[❮](green bold)"
+
+[git_branch]
+symbol = " "
+style = "purple bold"
+
+[git_status]
+style = "red bold"
+format = '([\[$all_status$ahead_behind\]]($style))'
+
+[cmd_duration]
+min_time = 500
+format = "[$duration](yellow)"
+
+[nodejs]
+disabled = false
+
+[python]
+disabled = false
+
+[rust]
+disabled = false
+
+[golang]
+disabled = false
+
+[package]
+disabled = true
+
+[custom.tmux]
+command = "tmux display-message -p '#S'"
+when = 'test -n "$TMUX"'
+format = '[ tmux:$output]($style) '
+style = 'bold fg:#89dceb'
