@@ -1,4 +1,4 @@
 #!/bin/zsh
 
 # Jetbrains Scripts
-export PATH="$PATH:/Users/Clloz/.jetbrains/bin"
+export PATH="$PATH:$HOME/.jetbrains/bin"

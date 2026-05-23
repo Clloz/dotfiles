@@ -2,14 +2,14 @@
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-#__conda_setup="$('/Users/Clloz/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#__conda_setup="$("$HOME/miniforge3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #    eval "$__conda_setup"
 #else
-#    if [ -f "/Users/Clloz/miniforge3/etc/profile.d/conda.sh" ]; then
-#        . "/Users/Clloz/miniforge3/etc/profile.d/conda.sh"
+#    if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
+#        . "$HOME/miniforge3/etc/profile.d/conda.sh"
 #    else
-#        export PATH="/Users/Clloz/miniforge3/bin:$PATH"
+#        export PATH="$HOME/miniforge3/bin:$PATH"
 #    fi
 #fi
 #unset __conda_setup
@@ -17,8 +17,8 @@
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba shell init' !!
-#export MAMBA_EXE='/Users/Clloz/miniforge3/bin/mamba';
-#export MAMBA_ROOT_PREFIX='/Users/Clloz/miniforge3';
+#export MAMBA_EXE="$HOME/miniforge3/bin/mamba";
+#export MAMBA_ROOT_PREFIX="$HOME/miniforge3";
 #__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
 #if [ $? -eq 0 ]; then
 #    eval "$__mamba_setup"
@@ -33,14 +33,14 @@ lazy_load_conda() {
     unset -f conda lazy_load_conda
     
     # 执行原始的 conda 初始化逻辑
-    __conda_setup="$('/Users/Clloz/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    __conda_setup="$("$HOME/miniforge3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__conda_setup"
     else
-        if [ -f "/Users/Clloz/miniforge3/etc/profile.d/conda.sh" ]; then
-            . "/Users/Clloz/miniforge3/etc/profile.d/conda.sh"
+        if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
+            . "$HOME/miniforge3/etc/profile.d/conda.sh"
         else
-            export PATH="/Users/Clloz/miniforge3/bin:$PATH"
+            export PATH="$HOME/miniforge3/bin:$PATH"
         fi
     fi
     unset __conda_setup
@@ -53,8 +53,8 @@ conda() { lazy_load_conda "$@"; }
 lazy_load_mamba() {
     unset -f mamba lazy_load_mamba
 
-    export MAMBA_EXE='/Users/Clloz/miniforge3/bin/mamba';
-    export MAMBA_ROOT_PREFIX='/Users/Clloz/miniforge3';
+    export MAMBA_EXE="$HOME/miniforge3/bin/mamba";
+    export MAMBA_ROOT_PREFIX="$HOME/miniforge3";
     __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
     if [ $? -eq 0 ]; then
         eval "$__mamba_setup"
@@ -67,7 +67,6 @@ lazy_load_mamba() {
     mamba "$@"
 }
 mamba() { lazy_load_mamba "$@"; }
-
 
 
 

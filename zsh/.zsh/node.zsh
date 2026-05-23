@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # fnm
-export FNM_DIR="/Users/Clloz/.fnm"
+export FNM_DIR="$HOME/.fnm"
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 #_FNM_AUTO_ENABLED=0
@@ -28,5 +28,4 @@ function change-corepack-version() {
 # PNPM
 export PNPM_HOME="$HOME/.pnpm"
 export PATH="$PNPM_HOME:$PATH"
-
 

@@ -1,0 +1,4 @@
+zsh/.zsh/docker.zsh
+zsh/.zsh/local.zsh
+zsh/.zsh/*.local.zsh
+git/.gitconfig.local

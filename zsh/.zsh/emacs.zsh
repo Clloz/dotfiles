@@ -2,7 +2,7 @@
 #emacs config
 
 # emacs daemon
-#export PATH="/Users/Clloz/.emacs.d/bin:$PATH"
+#export PATH="$HOME/.emacs.d/bin:$PATH"
 alias emacs="~/.emacs_client.sh -t"
 alias em="emacs"
 alias emd="kill-emacs"

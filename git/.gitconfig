@@ -1,13 +1,11 @@
 [pager]
 	branch = false
 [core]
-	excludesfile = /Users/clloz/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	ignorecase = false
 	autocrlf = input
-[user]
-	name = Clloz
-	email = clloz@outlook.com
-	signingkey = A304E9E75192339D
+[include]
+	path = ~/.gitconfig.local
 [pull]
 	rebase = true
 [init]

@@ -13,9 +13,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
 
-alias onedrive='cd ~/Library/CloudStorage/OneDrive-Personal'
-alias kdemo='cd ~/Work/keenon/demo'
-
 mkcd() {
   mkdir -p "$1" && cd "$1"
 }

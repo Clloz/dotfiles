@@ -8,6 +8,7 @@ brew.zsh          # homebrew 配置
 plugins.zsh       # omz 插件配置
 proxy.zsh         # 代理配置
 hash.zsh          # hash 文件夹配置
+hash.local.zsh    # 本地 hash 配置
 
 c.zsh
 rust.zsh
@@ -24,10 +25,8 @@ docker.zsh
 
 vim.zsh
 emacs.zsh
-#hugo.zsh
 tmux.zsh
 
 chore.zsh
 alias.zsh         # 别名（可以使用前面的配置）
-#theme.zsh         # 主题配置（最后加载）
 fzf-tab.zsh
