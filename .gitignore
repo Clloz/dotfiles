@@ -2,3 +2,5 @@ zsh/.zsh/docker.zsh
 zsh/.zsh/local.zsh
 zsh/.zsh/*.local.zsh
 git/.gitconfig.local
+# lazygit runtime state
+config/.config/lazygit/state.yml
