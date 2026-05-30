@@ -97,7 +97,12 @@ t() {
 ts() {
     local session
     session=$(tmux list-sessions -F '#S' | fzf) || return
-    tmux switch-client -t "$session"
+
+    if [[ -n "$TMUX" ]]; then
+        tmux switch-client -t "$session"
+    else
+        tmux attach-session -t "$session"
+    fi
 }
 
 # ---------------------------------------------------------
