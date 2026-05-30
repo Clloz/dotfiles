@@ -23,14 +23,12 @@ setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 
 # zinit
-if [[ -f "$HOME/.local/share/zinit/zinit.git/zinit.zsh" ]]; then
-  source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-elif [[ -f "/opt/homebrew/opt/zinit/zinit.zsh" ]]; then
-  source "/opt/homebrew/opt/zinit/zinit.zsh"
-elif [[ -f "/home/linuxbrew/.linuxbrew/opt/zinit/zinit.zsh" ]]; then
-  source "/home/linuxbrew/.linuxbrew/opt/zinit/zinit.zsh"
-fi
 # source /opt/homebrew/opt/zinit/zinit.zsh
+ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
+
+if [[ -f "$ZINIT_HOME/zinit.zsh" ]]; then
+  source "$ZINIT_HOME/zinit.zsh"
+fi
 
 # completions
 zinit ice wait lucid
