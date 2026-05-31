@@ -72,6 +72,7 @@ alias ta='tmux attach -t'
 alias tls='tmux ls'
 alias tn='tmux new -s'
 alias tk='tmux kill-session -t'
+alias tr='tmux source-file ~/.tmux.conf'
 
 # ---------------------------------------------------------
 # 3. Safer defaults
