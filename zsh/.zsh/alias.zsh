@@ -72,38 +72,6 @@ alias ta='tmux attach -t'
 alias tls='tmux ls'
 alias tn='tmux new -s'
 alias tk='tmux kill-session -t'
-t() {
-  local dir
-  dir=$(zoxide query -l | fzf) || return
-
-  local name
-  name=$(basename "$dir" | tr ' .:' '___')
-
-  if tmux has-session -t "$name" 2>/dev/null; then
-    if [[ -n "$TMUX" ]]; then
-      tmux switch-client -t "$name"
-    else
-      tmux attach-session -t "$name"
-    fi
-  else
-    if [[ -n "$TMUX" ]]; then
-      tmux new-session -d -s "$name" -c "$dir"
-      tmux switch-client -t "$name"
-    else
-      tmux new-session -s "$name" -c "$dir"
-    fi
-  fi
-}
-ts() {
-    local session
-    session=$(tmux list-sessions -F '#S' | fzf) || return
-
-    if [[ -n "$TMUX" ]]; then
-        tmux switch-client -t "$session"
-    else
-        tmux attach-session -t "$session"
-    fi
-}
 
 # ---------------------------------------------------------
 # 3. Safer defaults
