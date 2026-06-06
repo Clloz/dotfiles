@@ -45,4 +45,3 @@ tw() {
 
     tmux switch-client -t "${target%:*}"
 }
-

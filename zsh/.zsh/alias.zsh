@@ -72,7 +72,7 @@ alias ta='tmux attach -t'
 alias tls='tmux ls'
 alias tn='tmux new -s'
 alias tk='tmux kill-session -t'
-alias tr='tmux source-file ~/.tmux.conf'
+alias tmr='tmux source-file ~/.tmux.conf'
 
 # ---------------------------------------------------------
 # 3. Safer defaults
@@ -185,3 +185,55 @@ alias esp='open -a "Espresso"'
 
 alias vmode='set -o vi'
 alias emode='set -o emacs'
+
+
+# ---------------------------------------------------------
+# 11. Other
+# ---------------------------------------------------------
+proxybench() {
+  local proxy="${1:-http://127.0.0.1:7890}"
+
+  echo "========================================"
+  echo "Proxy: $proxy"
+  echo "========================================"
+
+  echo
+  echo "[Google generate_204]"
+  curl -o /dev/null -s -w \
+'DNS:   %{time_namelookup}
+Conn:  %{time_connect}
+TLS:   %{time_appconnect}
+TTFB:  %{time_starttransfer}
+Total: %{time_total}
+\n' \
+  -x "$proxy" \
+  https://www.google.com/generate_204
+
+  echo
+  echo "[ChatGPT]"
+  curl -o /dev/null -s -w \
+'TLS:   %{time_appconnect}
+TTFB:  %{time_starttransfer}
+Total: %{time_total}
+\n' \
+  -x "$proxy" \
+  https://chatgpt.com
+
+  echo
+  echo "[GitHub]"
+  command time -p env HTTPS_PROXY="$proxy" \
+    git ls-remote https://github.com/torvalds/linux.git \
+    >/dev/null
+
+#   echo
+#   echo "[Download Speed 100MB]"
+#   curl -L \
+#     -x "$proxy" \
+#     -o /dev/null \
+#     -s \
+#     -w \
+# 'Speed: %{speed_download} bytes/s
+# Total: %{time_total}
+# \n' \
+#     "https://speed.cloudflare.com/__down?bytes=100000000"
+}
