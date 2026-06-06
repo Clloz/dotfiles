@@ -18,8 +18,6 @@ zstyle ':fzf-tab:*' fzf-flags \
   --height=50% \
   --layout=reverse \
   --border=rounded \
-  # --margin=0,1 \
-  # --padding=0 \
   --bind=tab:accept
 
 # Do not inherit FZF_DEFAULT_OPTS, avoids breaking fzf-tab
