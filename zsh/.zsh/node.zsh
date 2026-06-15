@@ -27,7 +27,10 @@ alias corepackv="change-corepack-version"
 function change-corepack-version() {
     corepack prepare $1@$2 --activate
 }
-# PNPM
+# PNPM v11
 export PNPM_HOME="$HOME/.pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
 
