@@ -3,6 +3,7 @@
 # fnm
 export FNM_DIR="$HOME/.fnm"
 if command -v fnm >/dev/null 2>&1; then
+  path=(${path:#${HOME}/.local/state/fnm_multishells/*/bin})
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
