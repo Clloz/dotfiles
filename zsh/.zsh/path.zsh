@@ -1,4 +1,10 @@
 #!/bin/zsh
 
+# User tools
+path=(
+  "$HOME/.local/bin"
+  $path
+)
+
 # Jetbrains Scripts
-export PATH="$PATH:$HOME/.jetbrains/bin"
+path+=("$HOME/.jetbrains/bin")

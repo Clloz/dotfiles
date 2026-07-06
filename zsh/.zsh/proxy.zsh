@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # clash mihomo
-export PATH="/opt/clash/bin:$PATH"
+[[ -d /opt/clash/bin ]] && path=(/opt/clash/bin $path)
 
 # 默认静默开启代理
 export http_proxy="http://127.0.0.1:7890"

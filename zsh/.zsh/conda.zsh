@@ -9,7 +9,7 @@
 #    if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
 #        . "$HOME/miniforge3/etc/profile.d/conda.sh"
 #    else
-#        export PATH="$HOME/miniforge3/bin:$PATH"
+#        path=("$HOME/miniforge3/bin" $path)
 #    fi
 #fi
 #unset __conda_setup
@@ -40,7 +40,7 @@ lazy_load_conda() {
         if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
             . "$HOME/miniforge3/etc/profile.d/conda.sh"
         else
-            export PATH="$HOME/miniforge3/bin:$PATH"
+            path=("$HOME/miniforge3/bin" $path)
         fi
     fi
     unset __conda_setup
@@ -67,6 +67,5 @@ lazy_load_mamba() {
     mamba "$@"
 }
 mamba() { lazy_load_mamba "$@"; }
-
 
 

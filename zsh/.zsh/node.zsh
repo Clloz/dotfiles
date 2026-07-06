@@ -29,8 +29,4 @@ function change-corepack-version() {
 }
 # PNPM v11
 export PNPM_HOME="$HOME/.pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-
+path=("$PNPM_HOME/bin" $path)

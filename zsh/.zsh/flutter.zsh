@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # flutter
-# export PATH="$HOME/Development/flutter/bin:$PATH"
-export PATH="$HOME/fvm/default/bin:$PATH"
+# [[ -d "$HOME/Development/flutter/bin" ]] && path=("$HOME/Development/flutter/bin" $path)
+[[ -d "$HOME/fvm/default/bin" ]] && path=("$HOME/fvm/default/bin" $path)
 export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
 export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
 

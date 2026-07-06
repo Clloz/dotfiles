@@ -1,6 +1,4 @@
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export TERM=xterm-256color
+[[ -f "$HOME/.zsh/env.zsh" ]] && source "$HOME/.zsh/env.zsh"
 
 # history，必须在 autosuggestions 之前
 export HISTFILE="$HOME/.zsh_history"
