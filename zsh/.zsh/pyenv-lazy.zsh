@@ -3,8 +3,11 @@
 
 export PYENV_ROOT="$HOME/.pyenv"
 
+[[ -d "$PYENV_ROOT/bin" ]] && path=("$PYENV_ROOT/bin" $path)
+[[ -d "$PYENV_ROOT/shims" ]] && path=("$PYENV_ROOT/shims" $path)
+
 if [[ -x "$PYENV_ROOT/bin/pyenv" ]]; then
-  export PATH="$PYENV_ROOT/bin:$PATH"
+  # export PATH="$PYENV_ROOT/bin:$PATH"
 
   _PYENV_AUTO_ENABLED=0
 
@@ -17,9 +20,9 @@ if [[ -x "$PYENV_ROOT/bin/pyenv" ]]; then
   _initialize_pyenv_full() {
     eval "$(command pyenv init - zsh)"
 
-    if command pyenv commands | grep -qx "virtualenv-init"; then
-      eval "$(command pyenv virtualenv-init -)"
-    fi
+    # if command pyenv commands | grep -qx "virtualenv-init"; then
+    #   eval "$(command pyenv virtualenv-init -)"
+    # fi
 
     _PYENV_AUTO_ENABLED=1
   }
