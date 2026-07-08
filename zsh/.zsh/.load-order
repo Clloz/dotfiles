@@ -7,6 +7,7 @@ path.zsh          # 通用 PATH 配置
 plugins.zsh       # omz 插件配置
 proxy.zsh         # 代理配置
 hash.zsh          # hash 文件夹配置
+local.zsh           # 本地配置
 
 c.zsh
 rust.zsh

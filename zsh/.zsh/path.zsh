@@ -8,3 +8,6 @@ path=(
 
 # Jetbrains Scripts
 path+=("$HOME/.jetbrains/bin")
+
+# direnv
+eval "$(direnv hook zsh)"

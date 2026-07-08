@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 [[ -f "$HOME/.zsh/env.zsh" ]] && source "$HOME/.zsh/env.zsh"
 
 # history，必须在 autosuggestions 之前
@@ -77,3 +78,11 @@ if command -v starship >/dev/null 2>&1; then
 fi
 
 [[ -f "$HOME/.zsh/dedupe-path.zsh" ]] && source "$HOME/.zsh/dedupe-path.zsh"
+
+bindkey -e
+
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
+# zprof
