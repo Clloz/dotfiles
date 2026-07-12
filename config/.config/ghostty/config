@@ -20,9 +20,10 @@ font-size = 15
 
 theme = Custom-iTerm
 
-background-opacity = 0.75
+background-opacity = 0.8
 background-blur-radius = 20
 background-image = backgrounds/background.png
+background-image-opacity = 0.5
 
 selection-background = #454d96
 foreground = #b8b8b8
