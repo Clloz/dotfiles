@@ -117,6 +117,10 @@ alias gcp='git cherry-pick'
 alias glo='git log --oneline --decorate --graph'
 alias glog="git log --graph --pretty=format:'%C(auto)%h%d %s %C(black)%C(bold)%cr' --abbrev-commit"
 
+# company git
+cgit() {
+  GIT_SSH_COMMAND='ssh -o ProxyCommand="nc -X 5 -x 127.0.0.1:11080 %h %p"' git "$@"
+}
 # dotfiles bare repo
 alias dotconf="/opt/homebrew/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
