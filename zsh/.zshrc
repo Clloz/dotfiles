@@ -66,7 +66,7 @@ _load_zsh_configs
 
 # modern CLI integrations
 if command -v atuin >/dev/null 2>&1; then
-  eval "$(atuin init zsh)"
+  eval "$(atuin init zsh --disable-up-arrow)"
 fi
 
 if command -v zoxide >/dev/null 2>&1; then

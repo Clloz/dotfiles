@@ -1,0 +1,10 @@
+style = "compact"
+enter_accept = false
+filter_mode = "global"
+search_mode = "fuzzy"
+
+[sync]
+records = true
+
+[tmux]
+enabled = true
