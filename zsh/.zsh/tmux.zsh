@@ -24,6 +24,32 @@ t() {
     fi
   fi
 }
+td() {
+  local dir name
+
+  dir=$(zoxide query -l | fzf) || return
+
+  name=$(basename "$dir" | tr ' .:' '___')
+
+  # Session 不存在时才初始化
+  if ! tmux has-session -t "=$name" 2>/dev/null; then
+    # Window 1: dev
+    tmux new-session -d -s "$name" -n dev -c "$dir"
+
+    # Window 2: server
+    tmux new-window -d -t "$name:2" -n server -c "$dir"
+
+    # 默认进入 dev
+    tmux select-window -t "$name:1"
+  fi
+
+  # 连接或切换 Session
+  if [[ -n "$TMUX" ]]; then
+    tmux switch-client -t "=$name"
+  else
+    tmux attach-session -t "=$name"
+  fi
+}
 ts() {
     local session
     session=$(tmux list-sessions -F '#S' | fzf) || return
@@ -38,10 +64,18 @@ tw() {
     local target
 
     target=$(
-        tmux list-windows -a \
-            -F '#S:#I:#W' |
+        tmux list-windows -a -F '#S:#I:#W' |
         fzf
     ) || return
 
-    tmux switch-client -t "${target%:*}"
+    local session="${target%%:*}"
+    local window="${target%:*}"
+
+    if [[ -n "$TMUX" ]]; then
+        tmux switch-client -t "$session"
+        tmux select-window -t "$window"
+    else
+        tmux attach-session -t "$session"
+        tmux select-window -t "$window"
+    fi
 }

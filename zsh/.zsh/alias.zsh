@@ -183,6 +183,9 @@ alias ppt='open -a "Microsoft PowerPoint"'
 alias excel='open -a "Microsoft Excel"'
 alias cdr='open -a "CodeRunner"'
 alias esp='open -a "Espresso"'
+alias company-tunnel='ssh -N -L 11080:127.0.0.1:11080 clloz@192.168.31.32'
+alias company-tunnel-tailscale='ssh -N -L 11080:127.0.0.1:11080 clloz@100.111.186.51'
+alias company-chrome='open -na "Google Chrome" --args --user-data-dir="$HOME/.chrome-company-vpn" --proxy-server="socks5://127.0.0.1:11080"'
 
 # ---------------------------------------------------------
 # 10. Shell mode
