@@ -74,6 +74,9 @@ alias tn='tmux new -s'
 alias tk='tmux kill-session -t'
 alias tmr='tmux source-file ~/.tmux.conf'
 
+nvim() {
+  fnm exec --using=24 -- nvim "$@"
+}
 # ---------------------------------------------------------
 # 3. Safer defaults
 # ---------------------------------------------------------

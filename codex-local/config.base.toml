@@ -2,10 +2,8 @@ model = "gpt-6.1-sol"
 model_reasoning_effort = "medium"
 
 approval_policy = "on-request"
-approval_reviewer = "auto_review"
+approvals_reviewer = "auto_review"
 sandbox_mode = "workspace-write"
-
-personality = "pragmatic"
 
 [mcp_servers.figma]
 url = "https://mcp.figma.com/mcp"
