@@ -1,3 +1,38 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+gui:
+  # ① 显示每个文件的新增/删除行数
+  showNumstatInFilesView: true
+
+  # ② 启用 Nerd Font 3 图标
+  nerdFontsVersion: "3"
+
+  # ③ 显示分支领先/落后的提交数量
+  showDivergenceFromBaseBranch: arrowAndNumber
+
+  # 左侧面板只占 25%
+  sidePanelWidth: 0.25
+
+  # 自动放大当前聚焦的左侧面板
+  expandFocusedSidePanel: true
+
+  # 关闭随机提示
+  showRandomTip: false
+
+  # 分支显示 Commit Hash
+  showBranchCommitHash: true
+
+  # 默认布局
+  screenMode: normal
+
+  # 已暂存和未暂存部分同时存在时拆分 Diff
+  splitDiff: auto
+
 git:
   diffRenderers:
-    - command: delta --dark --paging=never
+    - command: delta --{{colorScheme}} --paging=never
+
+  autoRefresh: true
+  # autoFetch: false
+
+os:
+  editPreset: "nvim-remote"
